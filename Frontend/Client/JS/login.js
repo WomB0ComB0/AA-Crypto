@@ -6,11 +6,11 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 // TODO: Replace the following with your app's Firebase project configuration
 var firebaseConfig = {
-    apiKey: "API_KEY",
+    apiKey: "AIzaSyCUWVws5D8PfWfpzGN57H_fC1Oj4iPNlcc",
     authDomain: "PROJECT_ID.firebaseapp.com",
     // The value of `databaseURL` depends on the location of the database
     databaseURL: "https://DATABASE_NAME.firebaseio.com",
-    projectId: "PROJECT_ID",
+    projectId: "aa-crypto",
     storageBucket: "PROJECT_ID.appspot.com",
     messagingSenderId: "SENDER_ID",
     appId: "APP_ID",
@@ -54,9 +54,12 @@ signInWithPopup(auth, provider)
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   }); 
+const container = document.querySelector(".container");
 const pwShowHide = document.querySelectorAll(".showHidePw");
 const pwFields = document.querySelectorAll(".password");
-
+const signUp = document.querySelector(".signup-link");
+const logIn = document.querySelector(".login-link");
+const forgotPwd = document.querySelector(".forgot-password-link");  
     //   js code to show/hide password and change icon
     pwShowHide.forEach(eyeIcon =>{
         eyeIcon.addEventListener("click", ()=>{
@@ -76,12 +79,7 @@ const pwFields = document.querySelectorAll(".password");
                 }
             }) 
         })
-    })
-
-const signUp = document.querySelector(".signup-link");
-const logIn = document.querySelector(".login-link");
-const forgotPwd = document.querySelector(".forgot-password-link");    
-
+    })  
 function signup(){
     signUp.classList.add("active");
     logIn.classList.remove("active");

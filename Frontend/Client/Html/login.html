@@ -8,6 +8,7 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="/Frontend/Client/CSS/login.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </head>
@@ -68,8 +69,8 @@
                     <div class="login-signup">
                         <span class="text">
                             Go back to
-                            <a href="#" class="text login-link">Login</a> or
-                            <a href="#" class="text signup-link">Signup</a>
+                            <a href="#" class="text login-link" onclick="login()">Login</a> or
+                            <a href="#" class="text signup-link" onclick="signup()">Signup</a>
                         </span>
                     </div>
                 </form>
@@ -108,7 +109,7 @@
                 </form>
                 <div class="login-signup">
                     <span class="text">Already a member?
-                        <a href="#" class="text login-link">Login Now</a>
+                        <a href="#" class="text login-link" onclick="login()">Login Now</a>
                     </span>
                 </div>
             </div>

@@ -8,10 +8,26 @@
     <link rel="stylesheet" href="/Frontend/Client/CSS/Console.css">
 </head>
 <body>
-    <header><nav><a href="."><img src="" alt=""></a><ul><li><a href=""></a></li></ul></nav></header>
+    <header>
+        <nav>
+            <a href=".">
+                <img src="" alt="">
+            </a>
+            <ul>
+                <li>
+                    <a href=""></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <!-- Oof  -->
-        <div class="__next"></div>
+        <!-- <div class="__next"></div> -->
+        <div class="crypto-container">
+            <form action="" class="crypto">
+                
+            </form>
+        </div>
 
     </main>
     <!-- This shouldn't have a footer -->
@@ -31,6 +47,18 @@
         </div>
     </div>
 </body>
+<script type="module">
+    import {ethers} from "https://cdn.ethers.io/lib/ethers-5.2.esm.min.js";
+    await daiContract.name()
+    await daiContract.symbol()
+    balance = await daiContract.balanceOf("ricmoo.firefly.eth")
+    ethers.utils.formaUtnits(balance, 18)
+    // State changing methods
+    const daiWithSigner = contract.connect(signer);
+    const dai = etehrs.utils.parseUnits("1.0", 18);
+    tx = daiWithSigner.transfer("ricmoo.firefly.eth", dai);
+</script>
+
 <script src="/Frontend/Client/JS/Console.js"></script>
 <script src="/node_modules/topbar/topbar.js"></script>
 </html>
