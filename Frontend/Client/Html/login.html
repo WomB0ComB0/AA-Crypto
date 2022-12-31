@@ -13,7 +13,6 @@
 </head>
 <body>
     <!-- This Could be better -->
-    <noscript>Enable JavaScript to run this app</noscript>
     <!-- <header>
         <nav>
             <a href=".">
@@ -28,7 +27,7 @@
                 <span class="title">Login</span>
                 <form action="#">
                     <div class="input-field">
-                        <input type="email" placeholder="Enter your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <input type="email" placeholder="Enter your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
@@ -36,29 +35,42 @@
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
-                    <div class="checkbox-text">
+                    <!-- <div class="checkbox-text">
                         <div class="checkbox-content">
                             <input type="checkbox" id="logCheck">
                             <label for="logCheck" class="text">Remember me</label>
                         </div>
                         <a href="#" class="text forgot-password-link">Forgot password?</a>
-                    </div>
+                    </div> -->
                     <div class="input-field button">
                         <input type="button" value="Login">
                     </div>
                 </form>
                 <div class="login-signup">
                     <span class="text">Not a member?
-                        <a href="#" class="text signup-link">Signup Now</a>
+                        <a href="#" class="text signup-link"  onclick="signup()">Signup Now</a>
+                        <br>
+                        <a href="#" class="text forgot-password-link" onclick="password()">Forgot password?</a>
                     </span>
                 </div>
             </div>
             <!--  -->
-            <div class="form forogt-password">
+            <div class="form forgot-password">
                 <span class="title">Forgot Password</span>
                 <form action="#">
                     <div class="input-field">
-                        <input type="text" >
+                        <input type="email" placeholder="Enter your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field button">
+                        <input type="button" value="Send Link">
+                    </div>
+                    <div class="login-signup">
+                        <span class="text">
+                            Go back to
+                            <a href="#" class="text login-link">Login</a> or
+                            <a href="#" class="text signup-link">Signup</a>
+                        </span>
                     </div>
                 </form>
             </div>

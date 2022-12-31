@@ -53,13 +53,9 @@ signInWithPopup(auth, provider)
     // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
-  });
-const container = document.querySelector(".container"),
-      pwShowHide = document.querySelectorAll(".showHidePw"),
-      pwFields = document.querySelectorAll(".password"),
-      signUp = document.querySelector(".signup-link"),
-      login = document.querySelector(".login-link");
-      forgotPW = document.querySelector(".forgot-password-link")
+  }); 
+const pwShowHide = document.querySelectorAll(".showHidePw");
+const pwFields = document.querySelectorAll(".password");
 
     //   js code to show/hide password and change icon
     pwShowHide.forEach(eyeIcon =>{
@@ -82,15 +78,22 @@ const container = document.querySelector(".container"),
         })
     })
 
-    // js code to appear signup and login form
-    signUp.addEventListener("click", ( )=>{
-        container.classList.add("active");
-    });
-    login.addEventListener("click", ( )=>{
-        container.classList.remove("active");
-    });
-    forgotPW.addEventListener("click", ( )=>{
-        // Figure this out while you make it
-        container.classList.remove("active");
-    });
-// MongoDB
+const signUp = document.querySelector(".signup-link");
+const logIn = document.querySelector(".login-link");
+const forgotPwd = document.querySelector(".forgot-password-link");    
+
+function signup(){
+    signUp.classList.add("active");
+    logIn.classList.remove("active");
+    forgotPwd.classList.remove("active");
+}
+function login(){
+    logIn.classList.add("active");
+    signUp.classList.remove("active");
+    forgotPwd.classList.remove("active");
+}
+function password(){
+    forgotPwd.classList.add("active");
+    signUp.classList.remove("active");
+    logIn.classList.remove("active");
+}
