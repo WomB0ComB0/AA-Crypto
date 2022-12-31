@@ -11,7 +11,7 @@
 
 body{height: 100vh;display: flex;align-items: center;justify-content: center;background-color: #4070f4;}
 
-.container{position: relative;max-width: 430px;width: 100%;background: #fff;border-radius: 10px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);overflow: hidden;margin: 0 20px;}
+.container{position: relative;max-width: 430px;width: 33%;background: #fff;border-radius: 10px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);overflow: hidden;margin: 0 20px;}
 
 .container .forms{display: flex;align-items: center;height: 440px;width: 200%;transition: height 0.2s ease;}
 
@@ -43,11 +43,11 @@ body{height: 100vh;display: flex;align-items: center;justify-content: center;bac
 
 .input-field i.showHidePw{right: 0;cursor: pointer;padding: 10px;}
 
-/* .form .checkbox-text{display: flex;align-items: center;justify-content: space-between;margin-top: 20px;}
+.form .checkbox-text{display: flex;align-items: center;justify-content: space-between;margin-top: 20px;}
 
 .checkbox-text .checkbox-content{display: flex;align-items: center;}
 
-.checkbox-content input{margin-right: 10px;accent-color: #4070f4;} */
+.checkbox-content input{margin-right: 10px;accent-color: #4070f4;}
 
 .form .text{color: #333;font-size: 14px;}
 
