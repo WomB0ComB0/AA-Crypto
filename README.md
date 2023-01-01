@@ -40,7 +40,7 @@ There are several contracts that make this program: <br/>
 Admin deploys this contract, it handles all the logic for the program. <br/><br/>
 __<b>Admin Functions:</b>__ <br/>
 `addManager()` / `removeManager()`</b> : allows the admin to add or remove authorized manager crypto wallet addresses <br/>
-`addUsers()` :</b> allows the admin to add patients/users to the allowed list wallets able to participate <br/>
+`addUsers()` :</b> allows the admin to add patients/users to the allowed list of wallets able to participate <br/>
 `startProgram()` : </b> close deposits for patients and donators, and begins investment strategies (providing liquidity to Stargate Finance for <b>5-10% apy <br/>)
 `endProgram()` : </b> ends investment strategies and opens withdrawals for all users. <br/> <br/>
  Manager functions : </b> <br/>
