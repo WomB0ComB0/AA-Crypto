@@ -1,5 +1,5 @@
 # AA-Crypto <br/>
-A way for people to be rewarded for having good attendance to Alcoholics Anonymous, only possible through blockchain and DeFi. It also allows donators to get charity tax breaks without actually spending any money.<br/>
+A way for people to be rewarded money for having good attendance to Alcoholics Anonymous, only possible through blockchain and DeFi. It also allows donators to get charity tax breaks without actually spending any money.<br/>
 
 # Why use us? <br/>
 <b> Patients </b> - Pledge a certain amount while also making a responsible financial decision, and be rewarded even more money for actually trying to recover <br/>
