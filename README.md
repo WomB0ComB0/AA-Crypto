@@ -13,9 +13,9 @@ A way for people to be rewarded for having good attendance to Alcoholics Anonymo
 3. We combine user funds + donator funds to return 5% a year on the entire pool.
 
 4. At the end of the year/term, users who get good attendance get rewards. 
-they get: 
-     i. their initial deposit + 5% apy 
-     ii. an equal cut (amongst other people who have good attendance) of all the profits of the entire pool from whatever is leftover. 
+they get: <br/>
+     i. their initial deposit + 5% apy <br/>
+     ii. an equal cut (amongst other people who have good attendance) of all the profits of the entire pool from whatever is leftover. <br/>
 
 For example: 
  1. Users + donators deposit into pool. There are 20,000 users. Lets assume users pledge random amounts each. The pool has $70,000,000 in it. $2,000,000 of it is pledges.
