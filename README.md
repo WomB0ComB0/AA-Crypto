@@ -1,8 +1,12 @@
 # AA-Crypto <br/>
 A way for people to be rewarded for having good attendance to Alcoholics Anonymous, only possible through blockchain and DeFi. It also allows donators to get charity tax breaks without actually spending any money.<br/>
 
+# Why use us? <br/>
+<b> Patients <b/> - Pledge a certain amount while also making a responsible financial decision, and be rewarded even more money for actually trying to recover <br/>
+<b> Donators <b/> - Lock up funds, profits are given to patients who have good attendance, and receive tax breaks from not actually spending any money.
+
 # Explanation <br/>
-1. users can lock up however much they want, it can double purpose to be a pledge or AND also a way to invest and make money. 
+1. users can lock up however much they want, it can double purpose to be a pledge AND also a way to invest and make money. 
 
 2. Donators can donate/ lock up their funds, if they hit x amount of money locked, they get a corresponding NFT to show proof, and possibly we track data so maybe in the future governments will give tax breaks.
 
