@@ -1,5 +1,35 @@
 # AA-Crypto <br/>
 A way for people to be rewarded for having good attendance to Alcoholics Anonymous, only possible through blockchain and DeFi. It also allows donators to get charity tax breaks without actually spending any money.<br/>
+
+# Explanation <br/>
+1. users can lock up however much they want, it can double purpose to be a pledge or AND also a way to invest and make money. 
+
+2. Donators can donate/ lock up their funds, if they hit x amount of money locked, they get a corresponding NFT to show proof, and possibly we track data so maybe in the future governments will give tax breaks.
+
+3. We combine user funds + donator funds to return 5% a year on the entire pool.
+
+4. At the end of the year/term, users who get good attendance get rewards. 
+they get: 
+     i. their initial deposit + 5% apy 
+     ii. an equal cut (amongst other people who have good attendance) of all the profits of the entire pool from whatever is leftover. 
+
+For example: 
+ 1. Users + donators deposit into pool. There are 20,000 users. Lets assume users pledge random amounts each. The pool has $70,000,000 in it. $2,000,000 of it is pledges.
+2. 1 year goes by. $70M turns into $73,500,000,   15,000 students have good attendance.
+3. So about $  21,000,000  is given back to all users. About $1,000,000 in profit is given to users who have good attendance. 
+4. Users who do not have good attendance get their original pledge back only.
+5. Donators are also given back their original deposits.
+6. Donators are minted NFT's corresponding to how much or long they have donated
+7. Users who have good attendance get part of the entire pool's leftover profit. 
+($3,500,00 profit - $1,000,000 pledge winners = $2,500,000 leftover profit)
+$2,500,000 is distributed evenly to 15,000 users who have good attendance.
+$2,500,000 / 15,000 = $166 per winner
+
+if User Amir pledged $10,000 they would receive $666 profit at the end of the year.
+if User Bob pledged $1000, they would receive $216 profit at the end of the year.
+if User Mary pledged $0, they would receive $166 profit at the end of the year. 
+
+
 # RecoveryTech.sol <br/>
 There are several contracts that make this program: <br/>
 1. <b>AA core </b>
