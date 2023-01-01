@@ -1,0 +1,680 @@
+{
+    "description": "A New Flow",
+    "states": [
+      {
+        "name": "Trigger",
+        "type": "trigger",
+        "transitions": [
+          {
+            "next": "send_message_2",
+            "event": "incomingMessage"
+          },
+          {
+            "event": "incomingCall"
+          },
+          {
+            "event": "incomingConversationMessage"
+          },
+          {
+            "event": "incomingRequest"
+          },
+          {
+            "event": "incomingParent"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": -780,
+            "y": -10
+          }
+        }
+      },
+      {
+        "name": "send_and_reply_1",
+        "type": "send-and-wait-for-reply",
+        "transitions": [
+          {
+            "next": "split_1",
+            "event": "incomingMessage"
+          },
+          {
+            "event": "timeout"
+          },
+          {
+            "event": "deliveryFailure"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": -100,
+            "y": 240
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "body": "Do you have any more Question?",
+          "timeout": "3600"
+        }
+      },
+      {
+        "name": "split_1",
+        "type": "split-based-on",
+        "transitions": [
+          {
+            "next": "split_2",
+            "event": "noMatch"
+          },
+          {
+            "next": "send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value contains nervus",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "Suicide"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value contains hang",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "hang"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to hung",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "hung"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to die",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "hurt"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to die",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": " kill"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to die",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "die"
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "input": "{{widgets.send_and_reply_1.inbound.Body}}",
+          "offset": {
+            "x": 340,
+            "y": 160
+          }
+        }
+      },
+      {
+        "name": "send_and_reply_2",
+        "type": "send-and-wait-for-reply",
+        "transitions": [
+          {
+            "next": "send_and_reply_1",
+            "event": "incomingMessage"
+          },
+          {
+            "next": "send_and_reply_1",
+            "event": "timeout"
+          },
+          {
+            "event": "deliveryFailure"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 190,
+            "y": 580
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "body": "Substance Abuse and Mental Health Services Administration (.gov)https://www.samhsa.gov › find-help988 Suicide & Crisis Lifeline",
+          "timeout": "3600"
+        }
+      },
+      {
+        "name": "split_2",
+        "type": "split-based-on",
+        "transitions": [
+          {
+            "next": "split_3",
+            "event": "noMatch"
+          },
+          {
+            "next": "Copy_of_send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to carpool",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "ride"
+              }
+            ]
+          },
+          {
+            "next": "Copy_of_send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to licenses",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "licenses"
+              }
+            ]
+          },
+          {
+            "next": "Copy_of_send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to driver",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "driver"
+              }
+            ]
+          },
+          {
+            "next": "Copy_of_send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to drive",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "drive"
+              }
+            ]
+          },
+          {
+            "next": "Copy_of_send_and_reply_2",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to carpool",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "carpool"
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "input": "{{widgets.send_and_reply_1.inbound.Body}}",
+          "offset": {
+            "x": 540,
+            "y": 300
+          }
+        }
+      },
+      {
+        "name": "Copy_of_send_and_reply_2",
+        "type": "send-and-wait-for-reply",
+        "transitions": [
+          {
+            "next": "send_and_reply_1",
+            "event": "incomingMessage"
+          },
+          {
+            "next": "send_and_reply_1",
+            "event": "timeout"
+          },
+          {
+            "event": "deliveryFailure"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 540,
+            "y": 580
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "body": "Most AA cohorts have carpool programs. I recommend asking your host/ coordinator next event.",
+          "timeout": "3600"
+        }
+      },
+      {
+        "name": "split_3",
+        "type": "split-based-on",
+        "transitions": [
+          {
+            "next": "split_4",
+            "event": "noMatch"
+          },
+          {
+            "next": "send_and_reply_4",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value contains worry",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "Nervous"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_4",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to scared",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "scared"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_4",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value contains worried",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "worried"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_4",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value contains worry",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "worry"
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "input": "{{widgets.send_and_reply_1.inbound.Body}}",
+          "offset": {
+            "x": 620,
+            "y": -190
+          }
+        }
+      },
+      {
+        "name": "send_and_reply_4",
+        "type": "send-and-wait-for-reply",
+        "transitions": [
+          {
+            "next": "send_and_reply_1",
+            "event": "incomingMessage"
+          },
+          {
+            "next": "send_and_reply_1",
+            "event": "timeout"
+          },
+          {
+            "event": "deliveryFailure"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 960,
+            "y": 570
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "body": "Everyone is scared when trying new things, but you should feel proud of taking the first step toward recovery.",
+          "timeout": "3600"
+        }
+      },
+      {
+        "name": "split_4",
+        "type": "split-based-on",
+        "transitions": [
+          {
+            "next": "split_5",
+            "event": "noMatch"
+          },
+          {
+            "next": "send_and_reply_3",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value contains See",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "See"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_3",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to someone",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "someone"
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "input": "{{widgets.send_and_reply_1.inbound.Body}}",
+          "offset": {
+            "x": 1280,
+            "y": 580
+          }
+        }
+      },
+      {
+        "name": "send_and_reply_3",
+        "type": "send-and-wait-for-reply",
+        "transitions": [
+          {
+            "next": "send_and_reply_1",
+            "event": "incomingMessage"
+          },
+          {
+            "next": "send_and_reply_1",
+            "event": "timeout"
+          },
+          {
+            "event": "deliveryFailure"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 1290,
+            "y": 890
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "body": "Every who attends is or is dependent on alcohol; therefore, no one will judge you as they are looking to be helped as well.",
+          "timeout": "3600"
+        }
+      },
+      {
+        "name": "split_5",
+        "type": "split-based-on",
+        "transitions": [
+          {
+            "next": "split_6",
+            "event": "noMatch"
+          },
+          {
+            "next": "send_and_reply_6",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value contains twelve",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "12"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_6",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value contains twelve",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "twelve"
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "input": "{{widgets.send_and_reply_1.inbound.Body}}",
+          "offset": {
+            "x": 1400,
+            "y": 270
+          }
+        }
+      },
+      {
+        "name": "send_and_reply_6",
+        "type": "send-and-wait-for-reply",
+        "transitions": [
+          {
+            "next": "send_and_reply_1",
+            "event": "incomingMessage"
+          },
+          {
+            "next": "send_and_reply_1",
+            "event": "timeout"
+          },
+          {
+            "event": "deliveryFailure"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 260,
+            "y": 880
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "body": "Twelve-step programs are international mutual aid programs supporting recovery from substance addictions, behavioral addictions and compulsions. Developed in the 1930s, the first twelve-step program, Alcoholics Anonymous, aided its membership to overcome alcoholism.",
+          "timeout": "3600"
+        }
+      },
+      {
+        "name": "split_6",
+        "type": "split-based-on",
+        "transitions": [
+          {
+            "next": "send_and_reply_9",
+            "event": "noMatch"
+          },
+          {
+            "next": "send_and_reply_8",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to link",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "link"
+              }
+            ]
+          },
+          {
+            "next": "send_and_reply_8",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "If value equal_to info",
+                "arguments": [
+                  "{{widgets.send_and_reply_1.inbound.Body}}"
+                ],
+                "type": "contains",
+                "value": "info"
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "input": "{{widgets.send_and_reply_1.inbound.Body}}",
+          "offset": {
+            "x": 760,
+            "y": 840
+          }
+        }
+      },
+      {
+        "name": "send_and_reply_8",
+        "type": "send-and-wait-for-reply",
+        "transitions": [
+          {
+            "next": "send_and_reply_1",
+            "event": "incomingMessage"
+          },
+          {
+            "next": "send_and_reply_1",
+            "event": "timeout"
+          },
+          {
+            "event": "deliveryFailure"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 850,
+            "y": 1050
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "body": "Alcoholics Anonymous | Alcoholics Anonymous (aa.org)",
+          "timeout": "3600"
+        }
+      },
+      {
+        "name": "send_and_reply_9",
+        "type": "send-and-wait-for-reply",
+        "transitions": [
+          {
+            "next": "send_and_reply_1",
+            "event": "incomingMessage"
+          },
+          {
+            "next": "send_and_reply_1",
+            "event": "timeout"
+          },
+          {
+            "event": "deliveryFailure"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 1420,
+            "y": 1030
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "body": "Alcoholics Anonymous is a fellowship of people who come together to solve their drinking problem. It doesn't cost anything to attend A.A. meetings.",
+          "timeout": "3600"
+        }
+      },
+      {
+        "name": "send_message_2",
+        "type": "send-message",
+        "transitions": [
+          {
+            "next": "send_and_reply_1",
+            "event": "sent"
+          },
+          {
+            "event": "failed"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": -587,
+            "y": 760
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "to": "{{contact.channel.address}}",
+          "body": "Hey, i am your resultion assistant. My goal is to keep you on track by anwsering any questions you have about your AA journy."
+        }
+      }
+    ],
+    "initial_state": "Trigger",
+    "flags": {
+      "allow_concurrent_calls": true
+    }
+  }
